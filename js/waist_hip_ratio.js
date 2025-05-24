@@ -1,22 +1,39 @@
-// Theme toggle logic
-document.getElementById('theme-toggle').addEventListener('click', () => {
-  const html = document.documentElement;
-  const isLight = html.getAttribute('data-theme') === 'light';
-  html.setAttribute('data-theme', isLight ? 'dark' : 'light');
-  document.getElementById('theme-toggle').textContent = isLight ? '☀️' : '🌙';
+const $html = $('html');
+const $themeToggle = $('#theme-toggle');
+
+function setTheme(theme) {
+  $html.attr('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  $themeToggle.text(theme === 'dark' ? '☀️' : '🌙');
+}
+
+$themeToggle.on('click', function () {
+  let currentTheme = $html.attr('data-theme');
+
+  // If no data-theme attribute found, default to 'light'
+  if (!currentTheme) currentTheme = 'light';
+
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  setTheme(newTheme);
 });
 
-// Waist-Hip ratio calculation
-document.getElementById('ratioForm').addEventListener('submit', (e) => {
+$(document).ready(function () {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  setTheme(savedTheme);
+});
+
+
+// Waist-Hip ratio calculation using jQuery
+$('#ratioForm').on('submit', function (e) {
   e.preventDefault();
 
-  const gender = document.getElementById('gender').value;
-  const waist = parseFloat(document.getElementById('waist').value);
-  const hip = parseFloat(document.getElementById('hip').value);
-  const resultEl = document.getElementById('result');
+  const gender = $('#gender').val();
+  const waist = parseFloat($('#waist').val());
+  const hip = parseFloat($('#hip').val());
+  const $resultEl = $('#result');
 
   if (!gender || !waist || !hip || hip === 0) {
-    resultEl.textContent = "Please fill in all fields correctly.";
+    $resultEl.text("Please fill in all fields correctly.");
     return;
   }
 
@@ -33,5 +50,5 @@ document.getElementById('ratioForm').addEventListener('submit', (e) => {
     else category = "High Risk";
   }
 
-  resultEl.innerHTML = `Your Waist-Hip Ratio is <strong>${ratio}</strong>.<br>Health Risk: <strong>${category}</strong>`;
+  $resultEl.html(`Your Waist-Hip Ratio is <strong>${ratio}</strong>.<br>Health Risk: <strong>${category}</strong>`);
 });

@@ -150,3 +150,15 @@ color: #7c64e0;
   color: var(--text-color);
   background-color: var(--card-bg);
 }
+
+.site-footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 8px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 13px;
+  z-index: 100;
+}
