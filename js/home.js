@@ -1,25 +1,24 @@
-  // Theme Toggle
-  const html = document.documentElement;
-  const themeToggle = document.getElementById('theme-toggle');
+const $html = $('html');
+const $themeToggle = $('#theme-toggle');
 
-  function setTheme(theme) {
-    html.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
-  }
+function setTheme(theme) {
+  $html.attr('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  $themeToggle.text(theme === 'dark' ? '☀️' : '🌙');
+}
 
-  themeToggle.addEventListener('click', () => {
-    const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-  });
+$themeToggle.on('click', function () {
+  const currentTheme = $html.attr('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  setTheme(newTheme);
+});
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
-  });
+$(document).ready(function () {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  setTheme(savedTheme);
 
-  // Logout button functionality
-  document.getElementById('logout-btn').addEventListener('click', () => {
+  $('#logout-btn').on('click', function () {
     alert('You have been logged out.');
-    window.location.href = 'login.html'; // or wherever your login page is
+    window.location.href = 'login.html'; 
   });
+});

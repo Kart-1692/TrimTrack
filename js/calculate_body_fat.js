@@ -1,26 +1,25 @@
-// Theme toggle logic
-document.getElementById('theme-toggle').addEventListener('click', () => {
-  const html = document.documentElement;
-  const isLight = html.getAttribute('data-theme') === 'light';
-  html.setAttribute('data-theme', isLight ? 'dark' : 'light');
-  document.getElementById('theme-toggle').textContent = isLight ? '☀️' : '🌙';
+// Theme toggle logic using jQuery
+$('#theme-toggle').on('click', function () {
+  const $html = $('html');
+  const isLight = $html.attr('data-theme') === 'light';
+  $html.attr('data-theme', isLight ? 'dark' : 'light');
+  $(this).text(isLight ? '☀️' : '🌙');
 });
 
-// Show/hide hip input for females
-document.getElementById('gender').addEventListener('change', (e) => {
-  const hipGroup = document.querySelector('.female-only');
-  hipGroup.style.display = e.target.value === 'female' ? 'block' : 'none';
+$('#gender').on('change', function () {
+  const gender = $(this).val();
+  $('.female-only').css('display', gender === 'female' ? 'block' : 'none');
 });
 
-// Body fat calculation
-document.getElementById('bodyFatForm').addEventListener('submit', (e) => {
+// Body fat calculation using jQuery
+$('#bodyFatForm').on('submit', function (e) {
   e.preventDefault();
 
-  const gender = document.getElementById('gender').value;
-  const height = parseFloat(document.getElementById('height').value);
-  const neck = parseFloat(document.getElementById('neck').value);
-  const waist = parseFloat(document.getElementById('waist').value);
-  const hip = parseFloat(document.getElementById('hip').value || 0);
+  const gender = $('#gender').val();
+  const height = parseFloat($('#height').val());
+  const neck = parseFloat($('#neck').val());
+  const waist = parseFloat($('#waist').val());
+  const hip = parseFloat($('#hip').val()) || 0;
 
   let bodyFat;
 
@@ -32,6 +31,5 @@ document.getElementById('bodyFatForm').addEventListener('submit', (e) => {
 
   bodyFat = bodyFat.toFixed(2);
 
-  const result = document.getElementById('result');
-  result.innerHTML = `Estimated Body Fat: <strong>${bodyFat}%</strong>`;
+  $('#result').html(`Estimated Body Fat: <strong>${bodyFat}%</strong>`);
 });
