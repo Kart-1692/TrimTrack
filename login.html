@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BMI Calculator - Login/Register</title>
+  <link rel="stylesheet" href="css/login.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="left-section">
+      <div class="theme-toggle">
+        <button id="theme-switch" aria-label="Toggle Theme">🌙</button>
+      </div>
+      <div class="login-card">
+        <h1 style="font-size: 3em;">
+        TRIM<span style="color: grey;">track</span>
+        </h1>
+        
+        <div class="tab-buttons">
+          <button id="login-tab" class="active">Login</button>
+          <button id="register-tab">Register</button>
+        </div>
+
+        <form id="login-form" class="form active">
+          <h2>Login</h2>
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+            <div class="error-message" id="username-error"></div>
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+            <div class="error-message" id="password-error"></div>
+          </div>
+          <button type="submit" id="login-button">Login</button>
+          <div id="login-message"></div>
+        </form>
+
+        <form id="register-form" class="form hidden">
+          <h2>Register</h2>
+          <div class="input-group">
+            <label for="reg-username">Username</label>
+            <input type="text" id="reg-username" name="reg-username" required />
+            <div class="error-message" id="reg-username-error"></div>
+          </div>
+          <div class="input-group">
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password" name="reg-password" required />
+            <div class="error-message" id="reg-password-error"></div>
+          </div>
+          <div class="input-group">
+            <label for="reg-confirm-password">Confirm Password</label>
+            <input type="password" id="reg-confirm-password" name="reg-confirm-password" required />
+            <div class="error-message" id="reg-confirm-password-error"></div>
+          </div>
+          <button type="submit" id="register-button">Register</button>
+          <div id="register-message"></div>
+        </form>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <img
+        src="https://hips.hearstapps.com/hmg-prod/images/running-is-one-of-the-best-ways-to-stay-fit-royalty-free-image-1036780592-1553033495.jpg?resize=1200:*"
+        alt="Fitness Image"
+      />
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    Made By <br />
+    Kartikey Mani Tripathi (1MS23IS052)<br />
+    Kavya Agarwal (1MS23IS053)
+  </footer>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
