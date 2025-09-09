@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculate BMI - TrimTrack</title>
+  <link rel="stylesheet" href="css/bmi.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <div class="top-nav">
+    <div class="logo">TrimTrack</div>
+    <div class="nav-right">
+      <button id="theme-toggle">🌙</button>
+      <a href="home.html"><button id="home-btn">Home</button></a>
+    </div>
+  </div>
+
+  <div class="bmi-container">
+    <h2>Calculate Your BMI</h2>
+
+    <div class="unit-toggle">
+      <label><input type="radio" name="unit" value="metric" checked> Metric (kg, cm)</label>
+      <label><input type="radio" name="unit" value="imperial"> Imperial (lbs, inches)</label>
+    </div>
+
+    <div class="input-fields">
+      <label for="weight">Weight:</label>
+      <input type="number" id="weight" placeholder="Enter weight">
+
+      <label for="height">Height:</label>
+      <input type="number" id="height" placeholder="Enter height">
+    </div>
+
+    <button id="calculate-btn">Calculate BMI</button>
+
+    <div id="result" class="result-box"></div>
+  </div>
+  <footer class="site-footer">
+    Made By <br />
+    Kartikey Mani Tripathi (1MS23IS052)<br />
+    Kavya Agarwal (1MS23IS053)
+  </footer>
+
+  <script src="js/bmi.js"></script>
+</body>
+</html>
