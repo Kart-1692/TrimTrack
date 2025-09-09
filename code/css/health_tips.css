@@ -1,0 +1,55 @@
+@import url('home.css'); 
+
+.tips-container {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tips-container h2 {
+  text-align: center;
+  color: var(--btn-bg);
+  margin-bottom: 30px;
+}
+
+.tip-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.tip-card h3 {
+  color: var(--btn-bg);
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.tip-card ul {
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+
+.tip-card ul li {
+  margin-bottom: 8px;
+  list-style-type: none;
+}
+
+.tip-card p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.site-footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 8px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 13px;
+  z-index: 100;
+}
