@@ -1,6 +1,5 @@
-@import url('home.css'); /* Inherit navbar + theme */
+@import url('home.css');
 
-/* Form Styles */
 .form-container {
   max-width: 500px;
   margin: 40px auto;

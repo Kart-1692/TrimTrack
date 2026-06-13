@@ -10,7 +10,6 @@ function setTheme(theme) {
 $themeToggle.on('click', function () {
   let currentTheme = $html.attr('data-theme');
 
-  // If no data-theme attribute found, default to 'light'
   if (!currentTheme) currentTheme = 'light';
 
   const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -23,7 +22,6 @@ $(document).ready(function () {
 });
 
 
-// Waist-Hip ratio calculation using jQuery
 $('#ratioForm').on('submit', function (e) {
   e.preventDefault();
 

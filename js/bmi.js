@@ -1,14 +1,11 @@
-// Theme Toggle with jQuery and localStorage
 $(document).ready(function () {
   const $html = $('html');
   const $toggleButton = $('#theme-toggle');
 
-  // Set initial theme from localStorage or default to 'light'
   const savedTheme = localStorage.getItem('theme') || 'light';
   $html.attr('data-theme', savedTheme);
   $toggleButton.text(savedTheme === 'dark' ? '☀️' : '🌙');
 
-  // Toggle theme on button click
   $toggleButton.on('click', function () {
     const currentTheme = $html.attr('data-theme');
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -18,7 +15,6 @@ $(document).ready(function () {
     localStorage.setItem('theme', newTheme);
   });
 
-  // BMI Calculation
   $('#calculate-btn').on('click', function () {
     const unit = $('input[name="unit"]:checked').val();
     const weight = parseFloat($('#weight').val());

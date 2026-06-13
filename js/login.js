@@ -14,11 +14,9 @@ $themeSwitch.on('click', () => {
 });
 
 $(document).ready(function () {
-  // Initialize theme from localStorage or default to 'light'
   const savedTheme = localStorage.getItem('theme') || 'light';
   setTheme(savedTheme);
 
-  // Tab switching
   $('#login-tab').on('click', function () {
     $('#login-tab').addClass('active');
     $('#register-tab').removeClass('active');
@@ -35,7 +33,6 @@ $(document).ready(function () {
     $('#login-message, #register-message').text('').removeClass('error success visible');
   });
 
-  // Login form submission
   $('#login-form').submit(function (e) {
     e.preventDefault();
 
@@ -50,7 +47,12 @@ $(document).ready(function () {
       return;
     }
 
-    if (username === 'user' && password === 'pass') {
+    if (username !== 'user@msrit.edu') {
+      $loginMessage.text('Username must be user@msrit.edu.').addClass('error visible');
+      return;
+    }
+
+    if (username === 'user@msrit.edu' && password === 'pass') {
       $loginMessage.text('Login successful! Redirecting...').addClass('success visible');
       setTimeout(() => {
         window.location.href = 'home.html';
@@ -60,7 +62,6 @@ $(document).ready(function () {
     }
   });
 
-  // Register form submission
   $('#register-form').submit(function (e) {
     e.preventDefault();
 
@@ -76,6 +77,11 @@ $(document).ready(function () {
       return;
     }
 
+    if (!username.endsWith('@msrit.edu')) {
+      $registerMessage.text('Username must end with @msrit.edu.').addClass('error visible');
+      return;
+    }
+
     if (password !== confirmPassword) {
       $registerMessage.text('Passwords do not match.').addClass('error visible');
       return;
@@ -83,10 +89,8 @@ $(document).ready(function () {
 
     $registerMessage.text('Registration successful! Please login now.').addClass('success visible');
 
-    // Clear form inputs
     $('#reg-username, #reg-password, #reg-confirm-password').val('');
 
-    // Switch to login tab after short delay
     setTimeout(() => {
       $('#login-tab').click();
     }, 1500);

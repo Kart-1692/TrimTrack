@@ -1,6 +1,5 @@
-@import url('home.css'); /* Inherit color variables and navbar styles */
+@import url('home.css');
 
-/* BMI Specific Styling */
 .bmi-container {
   background-color: var(--card-bg);
   height: 55whvh;

@@ -9,7 +9,6 @@ $('#theme-toggle').on('click', function () {
   localStorage.setItem('theme', newTheme);
 });
 
-// On page load, set theme from localStorage or default to 'light'
 $(document).ready(function () {
   const savedTheme = localStorage.getItem('theme') || 'light';
   $('html').attr('data-theme', savedTheme);

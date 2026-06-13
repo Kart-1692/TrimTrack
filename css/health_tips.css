@@ -1,6 +1,5 @@
-@import url('home.css'); /* Use your existing theme and navbar styles */
+@import url('home.css'); 
 
-/* Health Tips Section */
 .tips-container {
   padding: 40px 20px;
   max-width: 1000px;
