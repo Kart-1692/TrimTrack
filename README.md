@@ -142,13 +142,13 @@ Trim-Track/
 1. Download or clone the repository.
 
 ```bash
-git clone https://github.com/your-username/trim-track.git
+git clone https://github.com/Kart-1692/TrimTrack.git
 ```
 
 2. Navigate to the project directory.
 
 ```bash
-cd trim-track
+cd TrimTrack
 ```
 
 3. Open `index.html` in any modern web browser.
